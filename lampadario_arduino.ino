@@ -1,47 +1,299 @@
 const int NUM_CANDLES = 1;
 const int NUM_BYTES_EVENT = 1;
-byte event_data[NUM_BYTES_EVENT];
+byte receive_data[NUM_BYTES_EVENT];
+byte send_data[NUM_BYTES_EVENT];
 
-void encenderVela1() {
-  digitalWrite(2, HIGH);
+
+void encenderVelaGeneric(int candle_id, bool notify) {
+  int pin = candle_id + 2;
+  if (digitalRead(pin) == LOW) {
+    digitalWrite(pin, HIGH);
+    if (notify) {
+      send_data[0] = 128 + candle_id;
+      Serial.write(send_data, NUM_BYTES_EVENT);
+    }
+  }
+}
+
+void apagarVelaGeneric(int candle_id) {
+  int pin = candle_id + 2;
+  if (digitalRead(pin) == HIGH) {
+    digitalWrite(pin, LOW);
+  }
+}
+
+void encenderNotifyVela1() {
+  encenderVelaGeneric(0, true);
 }
 
 void apagarVela1() {
-  digitalWrite(2, LOW);
+  apagarVelaGeneric(0);
+}
+
+void encenderNotifyVela2() {
+  encenderVelaGeneric(1, true);
+}
+
+void apagarVela2() {
+  apagarVelaGeneric(1);
+}
+
+void encenderNotifyVela3() {
+  encenderVelaGeneric(2, true);
+}
+
+void apagarVela3() {
+  apagarVelaGeneric(2);
+}
+
+void encenderNotifyVela4() {
+  encenderVelaGeneric(3, true);
+}
+
+void apagarVela4() {
+  apagarVelaGeneric(3);
+}
+
+void encenderNotifyVela5() {
+  encenderVelaGeneric(4, true);
+}
+
+void apagarVela5() {
+  apagarVelaGeneric(4);
+}
+
+void encenderNotifyVela6() {
+  encenderVelaGeneric(5, true);
+}
+
+void apagarVela6() {
+  apagarVelaGeneric(5);
+}
+
+void encenderNotifyVela7() {
+  encenderVelaGeneric(6, true);
+}
+
+void apagarVela7() {
+  apagarVelaGeneric(6);
+}
+
+void encenderNotifyVela8() {
+  encenderVelaGeneric(7, true);
+}
+
+void apagarVela8() {
+  apagarVelaGeneric(7);
+}
+
+void encenderNotifyVela9() {
+  encenderVelaGeneric(8, true);
+}
+
+void apagarVela9() {
+  apagarVelaGeneric(8);
+}
+
+void encenderNotifyVela10() {
+  encenderVelaGeneric(9, true);
+}
+
+void apagarVela10() {
+  apagarVelaGeneric(9);
+}
+
+void encenderNotifyVela11() {
+  encenderVelaGeneric(10, true);
+}
+
+void apagarVela11() {
+  apagarVelaGeneric(10);
+}
+
+void encenderNotifyVela12() {
+  encenderVelaGeneric(11, true);
+}
+
+void apagarVela12() {
+  apagarVelaGeneric(11);
+}
+
+void encenderNotifyVela13() {
+  encenderVelaGeneric(12, true);
+}
+
+void apagarVela13() {
+  apagarVelaGeneric(12);
+}
+
+void encenderNotifyVela14() {
+  encenderVelaGeneric(13, true);
+}
+
+void apagarVela14() {
+  apagarVelaGeneric(13);
+}
+
+void encenderNotifyVela15() {
+  encenderVelaGeneric(14, true);
+}
+
+void apagarVela15() {
+  apagarVelaGeneric(14);
+}
+
+void encenderNotifyVela16() {
+  encenderVelaGeneric(15, true);
+}
+
+void apagarVela16() {
+  apagarVelaGeneric(15);
+}
+
+void encenderNotifyVela17() {
+  encenderVelaGeneric(16, true);
+}
+
+void apagarVela17() {
+  apagarVelaGeneric(16);
+}
+
+void encenderNotifyVela18() {
+  encenderVelaGeneric(17, true);
+}
+
+void apagarVela18() {
+  apagarVelaGeneric(17);
+}
+
+void encenderNotifyVela19() {
+  encenderVelaGeneric(18, true);
+}
+
+void apagarVela19() {
+  apagarVelaGeneric(18);
+}
+
+void encenderNotifyVela20() {
+  encenderVelaGeneric(19, true);
+}
+
+void apagarVela20() {
+  apagarVelaGeneric(19);
+}
+
+void encenderNotifyVela21() {
+  encenderVelaGeneric(20, true);
+}
+
+void apagarVela21() {
+  apagarVelaGeneric(20);
+}
+
+void encenderNotifyVela22() {
+  encenderVelaGeneric(21, true);
+}
+
+void apagarVela22() {
+  apagarVelaGeneric(21);
+}
+
+void encenderNotifyVela23() {
+  encenderVelaGeneric(22, true);
+}
+
+void apagarVela23() {
+  apagarVelaGeneric(22);
+}
+
+void encenderNotifyVela24() {
+  encenderVelaGeneric(23, true);
+}
+
+void apagarVela24() {
+  apagarVelaGeneric(23);
+}
+
+void encenderNotifyVela25() {
+  encenderVelaGeneric(24, true);
+}
+
+void apagarVela25() {
+  apagarVelaGeneric(24);
+}
+
+void encenderNotifyVela26() {
+  encenderVelaGeneric(25, true);
+}
+
+void apagarVela26() {
+  apagarVelaGeneric(25);
+}
+
+void encenderNotifyVela27() {
+  encenderVelaGeneric(26, true);
+}
+
+void apagarVela27() {
+  apagarVelaGeneric(26);
+}
+
+void encenderNotifyVela28() {
+  encenderVelaGeneric(27, true);
+}
+
+void apagarVela28() {
+  apagarVelaGeneric(27);
+}
+
+void encenderNotifyVela29() {
+  encenderVelaGeneric(28, true);
+}
+
+void apagarVela29() {
+  apagarVelaGeneric(28);
+}
+
+void encenderNotifyVela30() {
+  encenderVelaGeneric(29, true);
+}
+
+void apagarVela30() {
+  apagarVelaGeneric(29);
 }
 
 typedef void (* GenericCommandArray)();
 GenericCommandArray encenderVela[30] = {
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1,
-  encenderVela1
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1,
+  encenderNotifyVela1
 };
 
 GenericCommandArray apagarVela[30] = {
@@ -102,8 +354,8 @@ void setup() {
 }
 
 void loop() {
-  if (readEvent(event_data, NUM_BYTES_EVENT)) {
-    executeCommand(event_data);
+  if (readEvent(receive_data, NUM_BYTES_EVENT)) {
+    executeCommand(receive_data);
   }
 }
 
@@ -115,26 +367,15 @@ bool readEvent(byte* data, uint8_t dataLength) {
   return false;
 }
 
-void chequearEstado() {
-  String estado = estado;
-  for (int i = 2; i < NUM_CANDLES + 2; i++) {
-    int estadoLED = digitalRead(i);
-    if (estadoLED == HIGH) {
-      estado = estado + '1';
-    }
-    else {
-      estado = estado + '0';
-    }
-  }
-  Serial.println(estado);
-}
-
 void executeCommand(byte* data) {
   // El bit mas fuerte da el estado (on or off)
+  int int_value = *((int*)data);
   if (bitRead(data[0], 7) == 1) {
-    encenderVela1();
+    int candle_id = int_value - 128;
+    encenderVelaGeneric(candle_id, false);
   }
   else {
-    apagarVela1();
+    int candle_id = int_value;
+    apagarVelaGeneric(candle_id);
   }
 }
